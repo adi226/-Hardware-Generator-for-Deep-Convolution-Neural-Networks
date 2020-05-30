@@ -1,0 +1,1635 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+         Version J-2014.09-SP5-2 for RHEL64 -- Jul 11, 2015
+               Copyright (c) 1988-2015 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+##############################################
+# Setup: fill out the following parameters: name of clock signal, clock period (ns),
+# reset signal name (if used), name of top-level module, name of source file
+set CLK_NAME "clk";
+clk
+set CLK_PERIOD 1.14;
+1.14
+set RST_NAME "reset";
+reset
+set TOP_MOD_NAME "multi_64_33_9_10_16_30";
+multi_64_33_9_10_16_30
+set SRC_FILE "multi_64_33_9_10_16_30.sv";
+multi_64_33_9_10_16_30.sv
+# If you have multiple source files, change the line above to list them all like this:
+# set SRC_FILE [list "file1.sv" "file2.sv"];
+###############################################
+source setupdc.tcl
+NangateOpenCellLibrary_typical.db dw_foundation.sldb
+file mkdir work_synth
+define_design_lib WORK -path work_synth
+1
+analyze $SRC_FILE -format sverilog
+Running PRESTO HDLC
+Searching for ./multi_64_33_9_10_16_30.sv
+Compiling source file ./multi_64_33_9_10_16_30.sv
+Presto compilation completed successfully.
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/dw_foundation.sldb'
+1
+elaborate -work WORK $TOP_MOD_NAME
+Loading db file '/usr/local/synopsys/syn/libraries/syn/gtech.db'
+Loading db file '/usr/local/synopsys/syn/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'multi_64_33_9_10_16_30'.
+Information: Building the design 'layer1_64_33_16_16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer2_32_9_16_12'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'layer3_24_10_16_1'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'datapath1'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:155: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine datapath1 line 156 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    counter2_reg     | Flip-flop |  17   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ctrlpath1'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:255: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:258: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:251: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:329: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine ctrlpath1 line 185 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    m_valid_y_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    s_ready_x_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_x1_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x2_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x3_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x4_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x5_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x6_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x7_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x8_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x9_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x10_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x11_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x12_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x13_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x14_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x15_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x16_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_f_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_f_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    counter1_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|     en_acc_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath2'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:569: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine datapath2 line 570 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    counter2_reg     | Flip-flop |  13   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ctrlpath2'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:657: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:660: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:653: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:719: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine ctrlpath2 line 599 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    m_valid_y_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    s_ready_x_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_x1_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x2_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x3_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x4_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x5_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x6_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x7_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x8_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_x9_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x10_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x11_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    addr_x12_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_f_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    counter1_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     en_acc_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'datapath3'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:869: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine datapath3 line 870 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    counter2_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'ctrlpath3'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:924: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:927: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:920: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:953: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine ctrlpath3 line 899 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    m_valid_y_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    s_ready_x_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     addr_x1_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     addr_f_reg      | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    counter1_reg     | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|     en_acc_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     counter_reg     | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer1_64_33_16_16_f_rom'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:418: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:422: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:423: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:424: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:427: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:428: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:431: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:432: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:433: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:434: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:435: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:437: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:440: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:443: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:444: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:447: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 416 in file
+	'./multi_64_33_9_10_16_30.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           417            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer1_64_33_16_16_f_rom line 416 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory1' instantiated from design 'datapath1' with
+	the parameters "16,64,6". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory1_WIDTH16_SIZE64_LOGSIZE6 line 405 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==============================================================================
+|          block name/line            | Inputs | Outputs | # sel inputs | MB |
+==============================================================================
+| memory1_WIDTH16_SIZE64_LOGSIZE6/406 |   64   |   16    |      6       | N  |
+==============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mac1'. (HDL-193)
+
+Inferred memory devices in process
+	in routine mac1 line 345 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    mul_temp_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine mac1 line 350 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_temp_reg     | Flip-flop |  17   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer2_32_9_16_12_f_rom'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:808: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:810: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:813: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:814: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:815: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:816: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 806 in file
+	'./multi_64_33_9_10_16_30.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           807            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer2_32_9_16_12_f_rom line 806 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory2' instantiated from design 'datapath2' with
+	the parameters "16,32,5". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory2_WIDTH16_SIZE32_LOGSIZE5 line 795 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==============================================================================
+|          block name/line            | Inputs | Outputs | # sel inputs | MB |
+==============================================================================
+| memory2_WIDTH16_SIZE32_LOGSIZE5/796 |   32   |   16    |      5       | N  |
+==============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mac2'. (HDL-193)
+
+Inferred memory devices in process
+	in routine mac2 line 735 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    mul_temp_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine mac2 line 740 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_temp_reg     | Flip-flop |  17   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'layer3_24_10_16_1_f_rom'. (HDL-193)
+Warning:  ./multi_64_33_9_10_16_30.sv:1043: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:1046: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:1047: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:1048: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./multi_64_33_9_10_16_30.sv:1050: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 1040 in file
+	'./multi_64_33_9_10_16_30.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           1041           |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine layer3_24_10_16_1_f_rom line 1040 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        z_reg        | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'memory3' instantiated from design 'datapath3' with
+	the parameters "16,24,5". (HDL-193)
+
+Inferred memory devices in process
+	in routine memory3_WIDTH16_SIZE24_LOGSIZE5 line 1029 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mac3'. (HDL-193)
+
+Inferred memory devices in process
+	in routine mac3 line 969 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    mul_temp_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine mac3 line 974 in file
+		'./multi_64_33_9_10_16_30.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_temp_reg     | Flip-flop |  17   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+###### CLOCKS AND PORTS #######
+set CLK_PORT [get_ports $CLK_NAME]
+{clk}
+set TMP1 [remove_from_collection [all_inputs] $CLK_PORT]
+{reset s_data_in_x[15] s_data_in_x[14] s_data_in_x[13] s_data_in_x[12] s_data_in_x[11] s_data_in_x[10] s_data_in_x[9] s_data_in_x[8] s_data_in_x[7] s_data_in_x[6] s_data_in_x[5] s_data_in_x[4] s_data_in_x[3] s_data_in_x[2] s_data_in_x[1] s_data_in_x[0] s_valid_x m_ready_y}
+set INPUTS [remove_from_collection $TMP1 $RST_NAME]
+{s_data_in_x[15] s_data_in_x[14] s_data_in_x[13] s_data_in_x[12] s_data_in_x[11] s_data_in_x[10] s_data_in_x[9] s_data_in_x[8] s_data_in_x[7] s_data_in_x[6] s_data_in_x[5] s_data_in_x[4] s_data_in_x[3] s_data_in_x[2] s_data_in_x[1] s_data_in_x[0] s_valid_x m_ready_y}
+create_clock -period $CLK_PERIOD [get_ports clk]
+1
+# set delay for inputs to be 0.2ns
+set_input_delay 0.2 -max -clock clk $INPUTS
+1
+set_output_delay 0.2 -max -clock clk [all_outputs]
+1
+###### OPTIMIZATION #######
+set_max_area 0 
+1
+###### RUN #####
+compile_ultra
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | J-2014.09-DWBB_201409.5.2 |   *     |
+| Licensed DW Building Blocks        | J-2014.09-DWBB_201409.5.2 |   *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 18 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/NangateOpenCellLibrary_typical.db.alib'
+  Building model 'DW01_NAND2'
+Information: Ungrouping hierarchy l1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/c before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/c before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l3/d before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l3/c before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/rom before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m8 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m9 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m13 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m14 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m15 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l1/d/m16 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/rom before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem8 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem9 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/x_mem12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m8 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m9 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l2/d/m12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l3/d/rom before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l3/d/x_mem1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy l3/d/m1 before Pass 1 (OPT-776)
+Information: Ungrouping 54 of 71 hierarchies before Pass 1 (OPT-775)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'multi_64_33_9_10_16_30'
+Information: Added key list 'DesignWare' to design 'multi_64_33_9_10_16_30'. (DDB-72)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/rom/z_reg[14]' is removed because it is merged to 'l1/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/rom/z_reg[13]' is removed because it is merged to 'l1/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/rom/z_reg[12]' is removed because it is merged to 'l1/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/rom/z_reg[11]' is removed because it is merged to 'l1/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/rom/z_reg[10]' is removed because it is merged to 'l1/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/rom/z_reg[9]' is removed because it is merged to 'l1/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/rom/z_reg[8]' is removed because it is merged to 'l1/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/rom/z_reg[14]' is removed because it is merged to 'l2/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/rom/z_reg[13]' is removed because it is merged to 'l2/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/rom/z_reg[12]' is removed because it is merged to 'l2/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/rom/z_reg[11]' is removed because it is merged to 'l2/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/rom/z_reg[10]' is removed because it is merged to 'l2/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/rom/z_reg[9]' is removed because it is merged to 'l2/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/rom/z_reg[8]' is removed because it is merged to 'l2/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/rom/z_reg[14]' is removed because it is merged to 'l3/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/rom/z_reg[13]' is removed because it is merged to 'l3/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/rom/z_reg[12]' is removed because it is merged to 'l3/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/rom/z_reg[11]' is removed because it is merged to 'l3/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/rom/z_reg[10]' is removed because it is merged to 'l3/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/rom/z_reg[9]' is removed because it is merged to 'l3/d/rom/z_reg[15]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/rom/z_reg[8]' is removed because it is merged to 'l3/d/rom/z_reg[15]'. (OPT-1215)
+ Implement Synthetic for 'multi_64_33_9_10_16_30'.
+  Processing 'memory1_WIDTH16_SIZE64_LOGSIZE6_0'
+ Implement Synthetic for 'memory1_WIDTH16_SIZE64_LOGSIZE6_0'.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The register 'l1/c/counter_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l1/c/counter_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l1/c/counter_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l1/c/counter_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/c/counter_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/c/counter_reg[1]' is a constant and will be removed. (OPT-1206)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'multi_64_33_9_10_16_30_RSOP_1593'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'multi_64_33_9_10_16_30_RSOP_1601'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'multi_64_33_9_10_16_30_RSOP_1606'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'multi_64_33_9_10_16_30_RSOP_1607'. (DDB-72)
+Information: Updating design information... (UID-85)
+Information: Ungrouping hierarchy l1/d/x_mem16 'memory1_WIDTH16_SIZE64_LOGSIZE6_15' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem15 'memory1_WIDTH16_SIZE64_LOGSIZE6_14' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem14 'memory1_WIDTH16_SIZE64_LOGSIZE6_13' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem13 'memory1_WIDTH16_SIZE64_LOGSIZE6_12' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem12 'memory1_WIDTH16_SIZE64_LOGSIZE6_11' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem11 'memory1_WIDTH16_SIZE64_LOGSIZE6_10' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem10 'memory1_WIDTH16_SIZE64_LOGSIZE6_9' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem9 'memory1_WIDTH16_SIZE64_LOGSIZE6_8' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem8 'memory1_WIDTH16_SIZE64_LOGSIZE6_7' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem7 'memory1_WIDTH16_SIZE64_LOGSIZE6_6' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem6 'memory1_WIDTH16_SIZE64_LOGSIZE6_5' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem5 'memory1_WIDTH16_SIZE64_LOGSIZE6_4' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem4 'memory1_WIDTH16_SIZE64_LOGSIZE6_3' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem3 'memory1_WIDTH16_SIZE64_LOGSIZE6_2' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem2 'memory1_WIDTH16_SIZE64_LOGSIZE6_1' #insts = 3240. (OPT-777)
+Information: Ungrouping hierarchy l1/d/x_mem1 'memory1_WIDTH16_SIZE64_LOGSIZE6_0' #insts = 3240. (OPT-777)
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+Information: The register 'l3/c/counter_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/c/counter1_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l3/d/x_mem1/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/c/counter_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l1/c/counter1_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l1/c/counter_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/c/counter1_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem10/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem7/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem8/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem9/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem1/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem2/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem3/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem4/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem5/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem6/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[30][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/mem_reg[31][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem11/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[0][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[1][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[2][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[3][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[4][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[5][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[6][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[7][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[8][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[9][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[10][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[11][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[12][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[13][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[14][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[15][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[16][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[17][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[18][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[19][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[20][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[21][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[22][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[23][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[24][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[25][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[26][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[27][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[28][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/mem_reg[29][15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'l2/d/x_mem12/data_out_reg[15]' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:02:59  220317.2      0.71     259.0    1485.6                           4816805.0000
+    0:02:59  220316.6      0.68     253.5    1485.6                           4816790.5000
+    0:02:59  220316.6      0.68     253.5    1485.6                           4816790.5000
+    0:03:00  220316.1      0.67     253.1    1485.6                           4816762.0000
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+  Mapping 'multi_64_33_9_10_16_30_DW01_add_29'
+    0:04:28  204277.9      0.11      63.1       6.3                           4245956.0000
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:04:28  204277.9      0.11      63.1       6.3                           4245956.0000
+    0:04:28  204277.9      0.11      63.1       6.3                           4245956.0000
+    0:04:35  204092.5      0.11      56.7       6.3                           4224056.0000
+    0:04:35  204092.5      0.11      56.7       6.3                           4224056.0000
+    0:04:46  204855.4      0.08      32.6       2.7                           4247953.0000
+    0:04:46  204855.4      0.08      32.6       2.7                           4247953.0000
+    0:04:46  204863.1      0.07      32.4       2.7                           4248270.5000
+    0:04:46  204863.1      0.07      32.4       2.7                           4248270.5000
+    0:04:47  204867.9      0.07      32.1       2.7                           4248456.5000
+    0:04:47  204867.9      0.07      32.1       2.7                           4248456.5000
+    0:04:53  205689.8      0.05      19.0       0.0                           4277075.5000
+    0:04:53  205689.8      0.05      19.0       0.0                           4277075.5000
+    0:04:55  205765.1      0.04      18.1       0.0                           4279522.5000
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:04:56  205766.4      0.04      18.1       0.0                           4279507.0000
+    0:04:56  205769.1      0.04      18.0       0.0                           4279596.5000
+    0:04:56  205769.1      0.04      18.0       0.0                           4279596.5000
+    0:04:56  205769.1      0.04      18.0       0.0                           4279596.5000
+    0:04:56  205772.0      0.04      17.9       0.0                           4279721.5000
+    0:04:56  205795.7      0.04      17.8       0.0                           4280508.0000
+    0:04:56  205795.7      0.04      17.8       0.0                           4280508.0000
+    0:04:57  205795.7      0.04      17.8       0.0                           4280508.0000
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m3/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m3/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m3/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m3/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m3/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m3/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m3/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m6/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m6/mul_temp_reg[26]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m6/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m6/mul_temp_reg[26]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m6/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m6/mul_temp_reg[26]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m6/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m6/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m6/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m7/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m7/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m7/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m7/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m7/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m7/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m7/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m2/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m2/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m2/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m2/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m2/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m2/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m2/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m16/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m16/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m16/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m16/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m16/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m16/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m16/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m16/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m16/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m16/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m16/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m16/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m16/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m16/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m5/mul_temp_reg[30]' is removed because it is merged to 'l1/d/m5/mul_temp_reg[31]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m5/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m5/mul_temp_reg[31]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m5/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m5/mul_temp_reg[31]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m5/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m5/mul_temp_reg[31]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m5/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m5/mul_temp_reg[31]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m5/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m5/mul_temp_reg[31]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m5/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m5/mul_temp_reg[31]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m15/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m15/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m15/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m15/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m15/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m15/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m15/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m15/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m15/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m15/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m15/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m15/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m15/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m15/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m14/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m14/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m14/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m14/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m14/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m14/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m14/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m14/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m14/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m14/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m14/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m14/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m14/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m14/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m12/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m12/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m12/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m12/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m12/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m12/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m12/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m11/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m11/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m11/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m11/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m11/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m11/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m11/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m10/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m10/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m10/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m10/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m10/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m10/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m10/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m8/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m8/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m8/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m8/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m8/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m8/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m8/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m13/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m13/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m13/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m13/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m13/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m13/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m13/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m13/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m13/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m13/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m13/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m13/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m13/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m13/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m1/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m1/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m1/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m1/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m1/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m1/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m1/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m9/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m9/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m9/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m9/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m9/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m9/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m9/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m4/mul_temp_reg[28]' is removed because it is merged to 'l1/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m4/mul_temp_reg[26]' is removed because it is merged to 'l1/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m4/mul_temp_reg[24]' is removed because it is merged to 'l1/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m4/mul_temp_reg[25]' is removed because it is merged to 'l1/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m4/mul_temp_reg[27]' is removed because it is merged to 'l1/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m4/mul_temp_reg[29]' is removed because it is merged to 'l1/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l1/d/m4/mul_temp_reg[31]' is removed because it is merged to 'l1/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m4/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m4/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m4/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m4/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m4/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m4/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m4/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m4/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m3/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m3/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m3/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m3/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m3/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m3/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m3/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m3/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m1/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m1/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m1/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m1/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m1/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m1/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m1/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m12/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m12/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m12/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m12/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m12/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m12/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m12/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m12/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m11/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m11/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m11/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m11/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m11/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m11/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m11/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m11/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m10/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m10/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m10/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m10/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m10/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m10/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m10/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m10/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m9/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m9/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m9/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m9/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m9/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m9/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m9/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m9/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m2/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m2/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m2/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m2/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m2/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m2/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m2/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m2/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m8/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m8/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m8/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m8/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m8/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m8/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m8/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m8/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m7/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m7/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m7/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m7/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m7/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m7/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m7/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m7/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m6/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m6/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m6/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m6/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m6/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m6/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m6/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m6/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m5/mul_temp_reg[28]' is removed because it is merged to 'l2/d/m5/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m5/mul_temp_reg[26]' is removed because it is merged to 'l2/d/m5/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m5/mul_temp_reg[24]' is removed because it is merged to 'l2/d/m5/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m5/mul_temp_reg[25]' is removed because it is merged to 'l2/d/m5/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m5/mul_temp_reg[27]' is removed because it is merged to 'l2/d/m5/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m5/mul_temp_reg[29]' is removed because it is merged to 'l2/d/m5/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l2/d/m5/mul_temp_reg[31]' is removed because it is merged to 'l2/d/m5/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/m1/mul_temp_reg[28]' is removed because it is merged to 'l3/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/m1/mul_temp_reg[26]' is removed because it is merged to 'l3/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/m1/mul_temp_reg[24]' is removed because it is merged to 'l3/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/m1/mul_temp_reg[25]' is removed because it is merged to 'l3/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/m1/mul_temp_reg[27]' is removed because it is merged to 'l3/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/m1/mul_temp_reg[29]' is removed because it is merged to 'l3/d/m1/mul_temp_reg[30]'. (OPT-1215)
+Information: In design 'multi_64_33_9_10_16_30', the register 'l3/d/m1/mul_temp_reg[31]' is removed because it is merged to 'l3/d/m1/mul_temp_reg[30]'. (OPT-1215)
+    0:05:01  204905.4      0.04      17.0       0.0 l1/d/m13/mul_temp_reg[20]/D 4265598.0000
+    0:05:02  204909.4      0.04      16.8       0.0                           4265721.5000
+    0:05:05  205040.8      0.04      16.2       0.0                           4269899.5000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:05:06  205040.8      0.04      16.2       0.0                           4269899.5000
+    0:05:08  204889.2      0.04      12.5       0.0                           4265398.0000
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:05:21  204697.6      0.06      12.0       6.7                           4261860.5000
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+    0:06:22  202331.6      0.00       0.0       0.0                           4172023.5000
+    0:06:22  202331.6      0.00       0.0       0.0                           4172023.5000
+    0:06:22  202331.6      0.00       0.0       0.0                           4172023.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:28  202285.8      0.00       0.0       0.0                           4168543.5000
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:06:35  202285.8      0.00       0.0       0.0                           4168543.5000
+    0:06:45  201492.3      0.01       0.2       0.0                           4142542.7500
+    0:06:46  201528.8      0.00       0.0       0.0                           4144058.7500
+    0:06:46  201528.8      0.00       0.0       0.0                           4144058.7500
+    0:06:52  201519.7      0.00       0.0       0.0                           4143452.2500
+    0:06:57  201445.0      0.00       0.0       0.0                           4141224.7500
+    0:07:21  201425.0      0.00       0.0       0.0                           4140695.0000
+    0:07:25  201399.5      0.00       0.0       0.0                           4139571.7500
+    0:07:25  201399.5      0.00       0.0       0.0                           4139571.7500
+    0:07:30  201349.5      0.00       0.0       0.0                           4136393.0000
+Loading db file '/home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'multi_64_33_9_10_16_30' contains 17 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 24442 load(s), 1 driver(s)
+     Net 's_data_in_x[15]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[14]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[13]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[12]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[11]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[10]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[9]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[8]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[7]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[6]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[5]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[4]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[3]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[2]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[1]': 1024 load(s), 1 driver(s)
+     Net 's_data_in_x[0]': 1024 load(s), 1 driver(s)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+report_area
+ 
+****************************************
+Report : area
+Design : multi_64_33_9_10_16_30
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  7 20:34:43 2019
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'multi_64_33_9_10_16_30' contains 17 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+Number of ports:                           38
+Number of nets:                        107877
+Number of cells:                       105438
+Number of combinational cells:          80996
+Number of sequential cells:             24442
+Number of macros/black boxes:               0
+Number of buf/inv:                      21559
+Number of references:                      56
+
+Combinational area:              90750.955702
+Buf/Inv area:                    11871.846100
+Noncombinational area:          110598.539999
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                201349.495700
+Total area:                 undefined
+1
+report_power
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : multi_64_33_9_10_16_30
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  7 20:34:48 2019
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/home4/pmilder/ese507/synthesis/lib/NangateOpenCellLibrary_typical.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+multi_64_33_9_10_16_30 5K_hvratio_1_1    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 114.0320 mW   (96%)
+  Net Switching Power  =   4.9755 mW    (4%)
+                         ---------
+Total Dynamic Power    = 119.0075 mW  (100%)
+
+Cell Leakage Power     =   4.0822 mW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.1106e+05          611.0534        1.9285e+06        1.1359e+05  (  92.29%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational  2.9746e+03        4.3645e+03        2.1537e+06        9.4928e+03  (   7.71%)
+--------------------------------------------------------------------------------------------------
+Total          1.1403e+05 uW     4.9755e+03 uW     4.0822e+06 nW     1.2309e+05 uW
+1
+report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : multi_64_33_9_10_16_30
+Version: J-2014.09-SP5-2
+Date   : Sat Dec  7 20:34:48 2019
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: l1/d/x_mem10/data_out_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: l1/d/m10/mul_temp_reg[18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  multi_64_33_9_10_16_30
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  l1/d/x_mem10/data_out_reg[4]/CK (DFF_X1)                0.00 #     0.00 r
+  l1/d/x_mem10/data_out_reg[4]/Q (DFF_X1)                 0.10       0.10 r
+  U27675/Z (XOR2_X2)                                      0.14       0.24 r
+  U23762/ZN (NAND2_X4)                                    0.09       0.33 f
+  U40146/ZN (OAI22_X1)                                    0.07       0.40 r
+  U40161/CO (FA_X1)                                       0.09       0.49 r
+  U40171/S (FA_X1)                                        0.11       0.61 f
+  U40188/S (FA_X1)                                        0.14       0.74 r
+  U40169/ZN (NOR2_X1)                                     0.03       0.77 f
+  U40170/ZN (NOR2_X1)                                     0.06       0.83 r
+  U40206/ZN (NAND2_X1)                                    0.04       0.86 f
+  U28106/ZN (OAI21_X1)                                    0.08       0.95 r
+  U28107/ZN (AOI21_X1)                                    0.04       0.99 f
+  U40268/ZN (OAI21_X1)                                    0.05       1.04 r
+  U40283/ZN (XNOR2_X1)                                    0.06       1.10 r
+  l1/d/m10/mul_temp_reg[18]/D (DFF_X1)                    0.01       1.11 r
+  data arrival time                                                  1.11
+
+  clock clk (rise edge)                                   1.14       1.14
+  clock network delay (ideal)                             0.00       1.14
+  l1/d/m10/mul_temp_reg[18]/CK (DFF_X1)                   0.00       1.14 r
+  library setup time                                     -0.03       1.11
+  data required time                                                 1.11
+  --------------------------------------------------------------------------
+  data required time                                                 1.11
+  data arrival time                                                 -1.11
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
+write -f verilog $TOP_MOD_NAME -output gates.v -hierarchy
+Writing verilog file '/home/home5/javadekarm/ese507work1/gates.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit
+
+Thank you...
